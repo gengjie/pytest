@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<h1>
+    Subject: {{ poll.question }}
+</h1>
+<ul>{% if error_message %}<strong>{{ error_message }}</strong>{% endif %}</ul>
+<ul>
+    <h2>Options:</h2>
+    <form action="{% url polls:vote poll.id %}" method="post">
+        {% csrf_token %}
+        {% for choice in poll.choice_set.all %}
+        <li>
+            <input type="radio" name="choice" value="{{ choice.id }}">
+            <label>{{ choice.choice_text }}</label>
+        </li>
+        {% endfor %}
+        <input type="submit" value="submit">
+    </form>
+</ul>
+</body>
+</html>

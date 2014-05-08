@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<h2>Results:</h2>
+<ul>
+    {% for choice in poll.choice_set.all %}
+    <li>
+        {% if select_choice.id == choice.id %}
+        <font color="red">{{ choice.choice_text }}, {{ choice.votes }}</font>
+        {% else %}
+        {{ choice.choice_text }}, {{ choice.votes }}
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
