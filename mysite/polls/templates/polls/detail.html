@@ -2,24 +2,37 @@
 <html>
 <head>
     <title></title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.mini.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-theme.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-theme.mini.css">
+
+    <script src="{{ STATIC_URL }}js/jquery-2.1.1.mini.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap.mini.js"></script>
 </head>
 <body>
-<h1>
-    Subject: {{ poll.question }}
-</h1>
-<ul>{% if error_message %}<strong>{{ error_message }}</strong>{% endif %}</ul>
-<ul>
-    <h2>Options:</h2>
-    <form action="{% url polls:vote poll.id %}" method="post">
-        {% csrf_token %}
-        {% for choice in poll.choice_set.all %}
-        <li>
-            <input type="radio" name="choice" value="{{ choice.id }}">
-            <label>{{ choice.choice_text }}</label>
-        </li>
-        {% endfor %}
-        <input type="submit" value="submit">
-    </form>
-</ul>
+<div class="container">
+    <h1>
+        Subject: {{ poll.question }}
+    </h1>
+    <ul>{% if error_message %}<strong>{{ error_message }}</strong>{% endif %}</ul>
+    <ul>
+        <h2><small>Options:</small></h2>
+        <form action="{% url polls:vote poll.id %}" method="post">
+            {% csrf_token %}
+            {% for choice in poll.choice_set.all %}
+            <li>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="choice" id="choice" value="{{ choice.id }}">
+                    {{ choice.choice_text }}
+                  </label>
+                </div>
+            </li>
+            {% endfor %}
+            <input class="btn btn-default" type="submit" value="submit">
+        </form>
+    </ul>
+</div>
 </body>
 </html>

@@ -1,8 +1,10 @@
+# _*coding=utf-8_*_
 # Create your views here.
 from django.http import HttpResponse, Http404
 from django.template import Context, loader
 from django.shortcuts import render, get_object_or_404
 from models import Poll
+import urllib
 
 def index(request):
     latest_poll_list = Poll.objects.order_by('-pub_date')[:5]
@@ -45,3 +47,6 @@ def vote(request, poll_id):
 def test(request, p_a, p_b):
     print p_a, p_b
     return HttpResponse('%s, %s' % (p_a, p_b))
+
+def main(request):
+    return render(request, 'polls/main.html', {'project_name': 'Jet\'s Blog'})
