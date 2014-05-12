@@ -3,14 +3,10 @@
 from django.http import HttpResponse, Http404
 from django.template import Context, loader
 from django.shortcuts import render, get_object_or_404
-<<<<<<< HEAD
 from models import Poll, Country
 import hashlib
-
-=======
-from models import Poll
 import urllib
->>>>>>> 8a3e9403b8f83dbaeb49fb1b3f52ea3becae2235
+
 
 def index(request):
     latest_poll_list = Poll.objects.order_by('-pub_date')[:5]
@@ -60,14 +56,11 @@ def vote(request, poll_id):
 
 def test(request, p_a, p_b):
     print p_a, p_b
-<<<<<<< HEAD
+
     country = Country()
     choices = {1: 'UN', 2: 'USA'}
     # return HttpResponse('%s, %s' % (p_a, p_b))
     return render(request, 'polls/test.html', {'country': country, 'choices': choices})
-=======
-    return HttpResponse('%s, %s' % (p_a, p_b))
 
 def main(request):
     return render(request, 'polls/main.html', {'project_name': 'Jet\'s Blog'})
->>>>>>> 8a3e9403b8f83dbaeb49fb1b3f52ea3becae2235
