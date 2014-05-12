@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.mini.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-theme.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-theme.mini.css">
+
+    <script src="{{ STATIC_URL }}js/jquery-2.1.1.mini.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap.mini.js"></script>
+    <title>Python for Voting Test</title>
 </head>
 <body>
+<<<<<<< HEAD
 <h1>Some subjects for voting:</h1>
 {% if latest_poll_list %}
     <ul>
@@ -13,5 +21,18 @@
     </ul>
 {% else %}
 {% endif %}
+=======
+<div class="container">
+    <h1>Some subjects <small>for</small> voting:</h1>
+    {% if latest_poll_list %}
+        <ul>
+            {% for poll in latest_poll_list %}
+                <li><a href="{% url polls:detail poll.id %}">{{ poll.question }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+    {% endif %}
+</div>
+>>>>>>> 8a3e9403b8f83dbaeb49fb1b3f52ea3becae2235
 </body>
 </html>

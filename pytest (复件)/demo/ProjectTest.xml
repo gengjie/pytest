@@ -1,0 +1,53 @@
+<Project lscVersion="Logo8">
+    <properties>
+        <name>ProjectTest</name>
+        <author>gengjie</author>
+        <CreationTime>Fri Apr 04 13:46:57 CST 2014</CreationTime>
+        <LastChange>Fri Apr 04 13:47:44 CST 2014</LastChange>
+        <customer/>
+        <comment/>
+    </properties>
+    <Devices>
+        <Device diagram="Logo8_1 Diagram.lsc" dynamicConnectionNumber="0" id="139659044330486" name="Logo8_1"
+                type="101">
+            <NetworkInfo>
+                <IP>192.168.0.2</IP>
+                <Subnet>255.255.255.0</Subnet>
+                <Gateway>192.168.0.1</Gateway>
+            </NetworkInfo>
+        </Device>
+        <Device diagram="Logo8_2 Diagram.lsc" dynamicConnectionNumber="0" id="139659044805867" name="Logo8_2"
+                type="101">
+            <NetworkInfo>
+                <IP>192.168.0.3</IP>
+                <Subnet>255.255.255.0</Subnet>
+                <Gateway>192.168.0.1</Gateway>
+            </NetworkInfo>
+        </Device>
+    </Devices>
+    <Figures>
+        <properties>
+            <Zoom>100</Zoom>
+        </properties>
+        <Figure deviceId="139659044330486" position="44,154" type="101"/>
+        <Figure deviceId="139659044805867" position="274,154" type="101"/>
+        <Figure type="52">
+            <Connector deviceId="139659044330486"/>
+            <Points>
+                <Point x="170" y="157"/>
+                <Point x="170" y="135"/>
+                <Point x="155" y="135"/>
+                <Point x="155" y="115"/>
+            </Points>
+        </Figure>
+        <Figure type="52">
+            <Connector deviceId="139659044805867"/>
+            <Points>
+                <Point x="400" y="157"/>
+                <Point x="400" y="135"/>
+                <Point x="155" y="135"/>
+                <Point x="155" y="115"/>
+            </Points>
+        </Figure>
+    </Figures>
+</Project>
