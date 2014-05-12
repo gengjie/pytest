@@ -1,6 +1,6 @@
 __author__ = 'gengjie'
 from models import Poll
-from models import Choice
+from models import Choice, Country
 from django.contrib import admin
 
 class ChoiceInline(admin.TabularInline):
@@ -18,4 +18,4 @@ class PollAdmin(admin.ModelAdmin):
     date_hierarchy = 'pub_date'
 
 admin.site.register(Poll, PollAdmin)
-# admin.site.register(Choice)
+admin.site.register(Country)
