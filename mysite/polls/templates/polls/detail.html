@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css">
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.mini.css">
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-theme.css">
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-theme.mini.css">
-
-    <script src="{{ STATIC_URL }}js/jquery-2.1.1.mini.js"></script>
-    <script src="{{ STATIC_URL }}js/bootstrap.mini.js"></script>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}Detail for Voting Subject{% endblock %}
+{% block content %}
 <div class="container">
     <h1>
         Subject: {{ poll.question }}
@@ -33,6 +23,10 @@
             <input class="btn btn-default" type="submit" value="submit">
         </form>
     </ul>
+    <hr>
+
+    <footer>
+        <p>&copy; Company 2013</p>
+    </footer>
 </div>
-</body>
-</html>
+{% endblock %}

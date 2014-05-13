@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css">
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.mini.css">
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-theme.css">
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-theme.mini.css">
-
-    <script src="{{ STATIC_URL }}js/jquery-2.1.1.mini.js"></script>
-    <script src="{{ STATIC_URL }}js/bootstrap.mini.js"></script>
-    <title>Python for Voting Test</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}Python for Voting Test{% endblock %}
+{% block content %}
 <div class="container">
     <h1>Some subjects <small>for</small> voting:</h1>
     {% if latest_poll_list %}
@@ -21,6 +11,9 @@
         </ul>
     {% else %}
     {% endif %}
+    <hr>
+    <footer>
+        <p>&copy; Company 2013</p>
+    </footer>
 </div>
-</body>
-</html>
+{% endblock %}

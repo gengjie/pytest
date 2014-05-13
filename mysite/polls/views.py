@@ -3,11 +3,13 @@
 from django.http import HttpResponse, Http404
 from django.template import Context, loader
 from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.models import User
+from django.contrib import auth
 from models import Poll
 import urllib
 
 def index(request):
-    latest_poll_list = Poll.objects.order_by('-pub_date')[:5]
+    latest_poll_list = Poll.objects.order_by('-pub_date')[:1000]
     # template = loader.get_template('polls/index.html')
     # context = Context({
     #     'latest_poll_list': latest_poll_list,
@@ -49,4 +51,14 @@ def test(request, p_a, p_b):
     return HttpResponse('%s, %s' % (p_a, p_b))
 
 def main(request):
-    return render(request, 'polls/main.html', {'project_name': 'Jet\'s Blog'})
+    # if request.method != 'POST':
+    #     raise Http404('Only POSTs are allowed')
+    try:
+        username = request.POST['username']
+        password = request.POST['password']
+        passportObj = auth.authenticate(username=username, password=password)
+        print passportObj
+        # return HttpResponseRedirect('/you-are-logged-in/')
+        return render(request, 'polls/main.html', {'project_name': 'Jet\'s Blog'})
+    except User.DoesNotExist:
+        return Http404('')

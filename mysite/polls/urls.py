@@ -5,7 +5,6 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'mysite.views.home', name='home'),
     # url(r'^mysite/', include('mysite.foo.urls')),
-
     url(r'^$', views.index, name='index'),
     url(r'^main/$', views.main, name='main'),
     url(r'^(?P<poll_id>\d+)/$', views.detail, name='detail'),
