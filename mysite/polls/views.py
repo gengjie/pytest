@@ -62,3 +62,17 @@ def main(request):
         return render(request, 'polls/main.html', {'project_name': 'Jet\'s Blog'})
     except User.DoesNotExist:
         return Http404('')
+
+def login(request):
+    if request.method != 'POST':
+        raise Http404('Only POSTs are allowed')
+    try:
+        username = request.POST['username']
+        password = request.POST['password']
+        user = auth.authenticate(username=username, password=password)
+        if user is not None:
+            auth.login(request, user)
+        # return HttpResponseRedirect('/you-are-logged-in/')
+        return render(request, 'polls/main.html', {'project_name': 'Jet\'s Blog'})
+    except User.DoesNotExist:
+        return Http404('')

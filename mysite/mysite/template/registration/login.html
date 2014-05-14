@@ -2,7 +2,7 @@
 {% block title %}登录页面{% endblock %}
 {% block content %}
     <div class="container">
-       <form class="form-signin" role="form" action="/accounts/login/" method="POST">
+       <form class="form-signin" role="form" action="{% url polls:login %}" method="POST">
            {% csrf_token %}
             <h2 class="form-signin-heading"> 登 录 ：</h2>
             <input name="username" type="text" class="form-control" placeholder="邮箱" required autofocus>
