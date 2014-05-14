@@ -1,0 +1,111 @@
+[Desktop Entry]
+name = Steam
+comment = Application for managing and playing games on Steam
+exec = /usr/bin/steam %U
+icon = steam
+terminal = false
+type = Application
+categories = Network;FileTransfer;Game;
+mimetype = x-scheme-handler/steam;
+actions = Store;Community;Library;Servers;Screenshots;News;Settings;BigPicture;Friends;
+
+[Desktop Action Store]
+name = Store
+name[de] = Shop
+name[es] = Tienda
+name[fr] = Magasin
+name[it] = Negozio
+name[pt] = Loja
+name[ru] = Магазин
+name[zh_cn] = 商店
+name[zh_tw] = 商店
+exec = steam steam://store
+
+[Desktop Action Community]
+name = Community
+name[es] = Comunidad
+name[fr] = Communauté
+name[it] = Comunità
+name[pt] = Comunidade
+name[ru] = Сообщество
+name[zh_cn] = 社区
+name[zh_tw] = 社群
+exec = steam steam://url/SteamIDControlPage
+
+[Desktop Action Library]
+name = Library
+name[de] = Bibliothek
+name[es] = Biblioteca
+name[fr] = Bibliothèque
+name[it] = Libreria
+name[pt] = Biblioteca
+name[ru] = Библиотека
+name[zh_cn] = 库
+name[zh_tw] = 遊戲庫
+exec = steam steam://open/games
+
+[Desktop Action Servers]
+name = Servers
+name[de] = Server
+name[es] = Servidores
+name[fr] = Serveurs
+name[it] = Server
+name[pt] = Servidores
+name[ru] = Серверы
+name[zh_cn] = 服务器
+name[zh_tw] = 伺服器
+exec = steam steam://open/servers
+
+[Desktop Action Screenshots]
+name = Screenshots
+name[es] = Capturas
+name[fr] = Captures d'écran
+name[it] = Screenshot
+name[ru] = Скриншоты
+name[zh_cn] = 截图
+name[zh_tw] = 螢幕擷圖
+exec = steam steam://open/screenshots
+
+[Desktop Action News]
+name = News
+name[de] = Neuigkeiten
+name[es] = Noticias
+name[fr] = Actualités
+name[it] = Notizie
+name[pt] = Notícias
+name[ru] = Новости
+name[zh_cn] = 新闻
+name[zh_tw] = 新聞
+exec = steam steam://open/news
+
+[Desktop Action Settings]
+name = Settings
+name[de] = Einstellungen
+name[es] = Parámetros
+name[fr] = Paramètres
+name[it] = Impostazioni
+name[pt] = Configurações
+name[ru] = Настройки
+name[zh_cn] = 设置
+name[zh_tw] = 設定
+exec = steam steam://open/settings
+
+[Desktop Action BigPicture]
+name = Big Picture
+exec = steam steam://open/bigpicture
+
+[Desktop Action Friends]
+name = Friends
+name[de] = Freunde
+name[es] = Amigos
+name[fr] = Amis
+name[it] = Amici
+name[pt] = Amigos
+name[ru] = Друзья
+name[zh_cn] = 好友
+name[zh_tw] = 好友
+exec = steam steam://open/friends
+
+[Desktop Action Comments]
+comments = copy rights by Steam
+

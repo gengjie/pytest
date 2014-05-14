@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<people class="dgdg">
+    <person class="dfdg"><![CDATA[here is a bunch of fun text that i want to get a substring out of.]]>
+        <name class="DEV" col="dark">
+            <![CDATA[
+			function matchwo(a,b)
+			{
+			if(a < b && a < 0)then
+			{
+			return 1;
+			}
+			else
+			{
+			return 0;
+			}
+			}
+			]]>
+        </name>
+        <id></id>
+        <age class="ddg">34</age>
+        <friends class="hddd">
+            <friend class="helll">Steve</friend>
+            <friend class="dgdgdfe">Mark</friend>
+            <friend class="dgdga" dgl="dgdgdash">Dave</friend>
+            <![CDATA[here is a bunch of fun text that i want to get a substring
+			out of.]]>
+        </friends>
+    </person>
+    <person class="1234"><![CDATA[here is a bunch of fun text that i want to get a substring out of.]]>
+        <name class="DEV" col="dark">
+            <![CDATA[
+			function matchwo(a,b)
+			{
+			if(a < b && a < 0)then
+			{
+			return 1;
+			}
+			else
+			{
+			return 0;
+			}
+			}
+			]]>
+        </name>
+        <id></id>
+        <age class="ddg">34</age>
+        <friends class="hddd">
+            <friend class="helll">Steve</friend>
+            <friend class="dgdgdfe">Mark</friend>
+            <friend class="dgdga" dgl="dgdgdash">Dave</friend>
+            <![CDATA[here is a bunch of fun text that i want to get a substring
+			out of.]]>
+        </friends>
+    </person>
+</people>

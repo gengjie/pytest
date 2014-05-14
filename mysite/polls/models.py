@@ -25,3 +25,12 @@ class Choice(models.Model):
 
     def __unicode__(self):
         return self.choice_text
+
+
+class Country(models.Model):
+    CHOICES = (
+        (1, 'China'),
+        (2, 'USA'),
+        (3, 'UN')
+    )
+    country = models.CharField(choices=CHOICES, null=False, max_length=128)

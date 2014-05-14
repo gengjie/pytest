@@ -5,8 +5,9 @@ from django.template import Context, loader
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib import auth
-from models import Poll
-import urllib
+from models import Poll, Country
+import hashlib
+
 
 def index(request):
     latest_poll_list = Poll.objects.order_by('-pub_date')[:1000]
@@ -17,7 +18,13 @@ def index(request):
     context = {'latest_poll_list': latest_poll_list}
     # outputstr = ','.join([p.question for p in latest_poll_list])
     # return HttpResponse(template.render(context))
-    return render(request, 'polls/index.html', context)
+    response = render(request, 'polls/index.html', context)
+    response.set_cookie('username', 'tom')
+    m = hashlib.md5()
+    m.update('abc1234')
+    response.set_cookie('password', m.hexdigest())
+    return response
+
 
 def detail(request, poll_id):
     # try:
@@ -26,7 +33,9 @@ def detail(request, poll_id):
     #     raise Http404
     # # return HttpResponse('Hello World!!! This is %s parameter...' % poll_id)
     poll = get_object_or_404(Poll, pk=poll_id)
-    return render(request, 'polls/detail.html', {'poll': poll})
+    return render(request, 'polls/detail.html',
+                  {'poll': poll, 'username': request.COOKIES['username'], 'password': request.COOKIES['password']})
+
 
 def result(request, poll_id):
     return HttpResponse('Hello World!!! This is %s result...' % poll_id)
@@ -48,7 +57,11 @@ def vote(request, poll_id):
 
 def test(request, p_a, p_b):
     print p_a, p_b
-    return HttpResponse('%s, %s' % (p_a, p_b))
+
+    country = Country()
+    choices = {1: 'UN', 2: 'USA'}
+    # return HttpResponse('%s, %s' % (p_a, p_b))
+    return render(request, 'polls/test.html', {'country': country, 'choices': choices})
 
 def main(request):
     # if request.method != 'POST':

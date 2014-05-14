@@ -2,13 +2,16 @@
 {% block title %}Python for Voting Test{% endblock %}
 {% block content %}
 <div class="container">
-    <h1>Some subjects <small>for</small> voting:</h1>
+    <h1>Some subjects
+        <small>for</small>
+        voting:
+    </h1>
     {% if latest_poll_list %}
-        <ul>
-            {% for poll in latest_poll_list %}
-                <li><a href="{% url polls:detail poll.id %}">{{ poll.question }}</a></li>
-            {% endfor %}
-        </ul>
+    <ul>
+        {% for poll in latest_poll_list %}
+        <li><a href="{% url polls:detail poll.id %}">{{ poll.question }}</a></li>
+        {% endfor %}
+    </ul>
     {% else %}
     {% endif %}
     <hr>
