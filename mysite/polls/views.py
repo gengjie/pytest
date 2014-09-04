@@ -1,11 +1,12 @@
 # _*coding=utf-8_*_
 # Create your views here.
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.template import Context, loader
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib import auth
-from models import Poll, Country
+from django.contrib.auth.decorators import login_required
+from models import Poll, Country, MyUser
 import hashlib
 
 
@@ -33,6 +34,7 @@ def detail(request, poll_id):
     #     raise Http404
     # # return HttpResponse('Hello World!!! This is %s parameter...' % poll_id)
     poll = get_object_or_404(Poll, pk=poll_id)
+    print '--->', request.COOKIES['username']
     return render(request, 'polls/detail.html',
                   {'poll': poll, 'username': request.COOKIES['username'], 'password': request.COOKIES['password']})
 
@@ -63,14 +65,17 @@ def test(request, p_a, p_b):
     # return HttpResponse('%s, %s' % (p_a, p_b))
     return render(request, 'polls/test.html', {'country': country, 'choices': choices})
 
+@login_required
 def main(request):
+    u = MyUser(username='Jie', password='123456')
+    u.save()
     # if request.method != 'POST':
     #     raise Http404('Only POSTs are allowed')
     try:
         username = request.POST['username']
         password = request.POST['password']
-        passportObj = auth.authenticate(username=username, password=password)
-        print passportObj
+        user = auth.authenticate(username=username, password=password)
+        print user
         # return HttpResponseRedirect('/you-are-logged-in/')
         return render(request, 'polls/main.html', {'project_name': 'Jet\'s Blog'})
     except User.DoesNotExist:
@@ -89,3 +94,7 @@ def login(request):
         return render(request, 'polls/main.html', {'project_name': 'Jet\'s Blog'})
     except User.DoesNotExist:
         return Http404('')
+
+def logout(request):
+    auth.logout(request)
+    return HttpResponseRedirect('/accounts/login/')

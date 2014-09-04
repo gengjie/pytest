@@ -2,6 +2,12 @@ from django.db import models
 from django.utils import timezone
 from datetime import datetime
 from datetime import timedelta
+from mongoengine import *
+
+connect('python')
+class MyUser(Document):
+    username = StringField(max_length=30)
+    password = IntField(required=True)
 
 # Create your models here.
 class Poll(models.Model):
