@@ -6,7 +6,6 @@ import socket
 import sys
 import threading
 
-
 class MessageHanlder(threading.Thread):
     MESSAGE = "some plain text responses from server..."
 

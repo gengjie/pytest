@@ -55,3 +55,5 @@ if __name__ == '__main__':
 
     # execfile usage:
     execfile('DateTest.py')
+
+print sum((1,2,3,4,5,6), start=1)

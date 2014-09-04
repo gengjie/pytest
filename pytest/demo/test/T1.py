@@ -17,3 +17,7 @@ class T2(T1):
 t2 = T2()
 t2.handle()
 t2.do()
+
+f = open('/home/gengjie/index.html.4', 'r')
+import os, stat
+print os.stat('/home/gengjie/index.html.4')[stat.ST_SIZE], 'bytes'

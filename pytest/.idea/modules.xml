@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../mysite/.idea/mysite.iml" filepath="$PROJECT_DIR$/../mysite/.idea/mysite.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/pytest.iml" filepath="$PROJECT_DIR$/.idea/pytest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../twisted/twisted-intro/.idea/twisted-intro.iml" filepath="$PROJECT_DIR$/../twisted/twisted-intro/.idea/twisted-intro.iml" />
     </modules>
   </component>
 </project>

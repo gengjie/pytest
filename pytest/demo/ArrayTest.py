@@ -2,8 +2,9 @@ __author__ = 'gengjie'
 import array
 import sys
 
-a = array.array('B', range(16))
-
+print '\x09', repr('\x09')
+a = array.array('H', range(16))
+print a
 t = (1, 2, 3, 4, 5,)
 print array.array('b', t).tolist()
 

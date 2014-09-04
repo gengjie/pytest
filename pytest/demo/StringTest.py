@@ -20,7 +20,7 @@ print string.find(text, 'GengJie'), string.find(text, 'r')
 print 'there\'re %d e in the text' % (string.count(text, 'e'))
 
 print string.atoi('0x9E8A32', 16)
-print string.atof('101.2324')
+print repr(string.atof('101.2324'))
 
 print text.decode('utf-8').encode('gbk')
 
@@ -30,3 +30,5 @@ print string.split(s, None, 2)
 
 i = random.randint(ord('a'), ord('z'))
 print i, chr(i)
+
+print round(10.01.hex(), 2)
